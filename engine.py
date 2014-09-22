@@ -77,7 +77,7 @@ class Engine:
         self.print_result(b)
         
         # Let the engine play
-        self.search(b)
+        #self.search(b)
         
     ####################################################################
 
@@ -371,6 +371,21 @@ class Engine:
             b.undomove()
 
         return cpt
+        
+    def perftdebug(self,b):
+        
+        "Show moves for side to move for debugging"
+        
+        mList=b.gen_moves_list()
+        
+        print(len(mList),'moves found :')
+        
+        for m in mList:
+            print(b.caseInt2Str(m[0])+b.caseInt2Str(m[1])+m[2])
+            b.domove(m[0],m[1],m[2])
+            self.perft('perft 2',b)
+            input()
+            b.undomove()
             
     ####################################################################
 

@@ -49,6 +49,9 @@ while(True):
     elif('perft ' in c):
         e.perft(c,b)        
 
+    elif(c=='perftdebug'):
+        e.perftdebug(b)
+        
     else:
         # coup à jouer ? ex : e2e4
         e.usermove(b,c)
