@@ -191,7 +191,12 @@ class Board:
             elif(c=='/'):
                 pass
             else: # a number of empty squares is given
-                nb,cpt=int(c),0
+                try:
+                    nb=int(c)
+                except ValueError:
+                    print('Error : wrong FEN. Integer expected.')
+                    return                
+                cpt=0
                 while(cpt<nb):
                     self.cases[i]=Piece()
                     cpt=cpt+1
