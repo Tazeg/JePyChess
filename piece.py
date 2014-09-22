@@ -121,6 +121,7 @@ class Piece:
                 # S'il y a une tour en 56, etc...
                 if(echiquier.cases[56].nom=='TOUR' and \
                 echiquier.cases[56].couleur=='blanc' and \
+                echiquier.cases[57].isEmpty() and \
                 echiquier.cases[58].isEmpty() and \
                 echiquier.cases[59].isEmpty() and \
                 echiquier.is_attacked(58,cAd)==False and \
