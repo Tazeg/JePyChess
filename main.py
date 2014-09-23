@@ -49,8 +49,8 @@ while(True):
     elif('perft ' in c):
         e.perft(c,b)        
 
-    elif(c=='perftdebug'):
-        e.perftdebug(b)
+    elif(c=='legalmoves'):
+        e.legalmoves(b)
         
     else:
         # coup à jouer ? ex : e2e4

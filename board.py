@@ -685,6 +685,7 @@ class Board:
         print('- "new" for a new game')
         print('- "e2e4" for example, to move a piece')
         print('- "e7e8q" for a promote move to queen ("r" for rook, "n" for knight, "b" for bishop)')
+        print('- "legalmoves" show legal moves for side to move')
         print('- "undomove" to cancel the last move')
         print('- "go" asks the engine to play now')
         print('- "setboard [fen]" to set the board as the FEN notation given')

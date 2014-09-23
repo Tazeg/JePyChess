@@ -372,20 +372,21 @@ class Engine:
 
         return cpt
         
-    def perftdebug(self,b):
+    ####################################################################
+    
+    def legalmoves(self,b):
         
-        "Show moves for side to move for debugging"
+        "Show legal moves for side to move"
         
         mList=b.gen_moves_list()
         
-        print(len(mList),'moves found :')
-        
+        cpt=1
         for m in mList:
-            print(b.caseInt2Str(m[0])+b.caseInt2Str(m[1])+m[2])
-            b.domove(m[0],m[1],m[2])
-            self.perft('perft 2',b)
-            input()
+            if(not b.domove(m[0],m[1],m[2])):
+                continue            
+            print('move #',cpt,':',b.caseInt2Str(m[0])+b.caseInt2Str(m[1])+m[2])
             b.undomove()
+            cpt+=1
             
     ####################################################################
 

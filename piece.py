@@ -128,7 +128,7 @@ class Piece:
                 echiquier.is_attacked(59,cAd)==False and \
                 echiquier.is_attacked(pos1,cAd)==False):
                     liste.append((pos1,58,''))
-        else:
+        elif(c=='noir'):
             if(echiquier.black_can_castle_7):
                 if(echiquier.cases[7].nom=='TOUR' and \
                 echiquier.cases[7].couleur=='noir' and \
@@ -140,7 +140,7 @@ class Piece:
                     liste.append((pos1,6,''))
             if(echiquier.black_can_castle_0):
                 if(echiquier.cases[0].nom=='TOUR' and \
-                echiquier.cases[7].couleur=='noir' and \
+                echiquier.cases[0].couleur=='noir' and \
                 echiquier.cases[1].isEmpty() and \
                 echiquier.cases[2].isEmpty() and \
                 echiquier.cases[3].isEmpty() and \
