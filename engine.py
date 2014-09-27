@@ -418,9 +418,10 @@ class Engine:
         """
 
         oldDepth=self.init_depth
-        self.init_depth=3
+        self.init_depth=4
         timeDiff=[]
 
+        # testing 3 times
         for i in range(3):
 
             print('Searching to depth',self.init_depth,'...')
@@ -442,10 +443,7 @@ class Engine:
 
         print('Best time:',timeDiff[0],'ms')
         print('Nodes:',self.nodes)
-        
-        nps = self.nodes / timeDiff[0]
-        nps *= 1000
-        print('Nodes per second:',round(nps/1000,2),'kn/s')
+        print('Nodes per second:',round(self.nodes/timeDiff[0],2),'kn/s')
         
         # Restoring changed values
         self.init_depth=oldDepth
