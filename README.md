@@ -34,4 +34,4 @@ Requirements :
 - Python 3
 
 More information on :
-http://fr.jeffprod.com/blog/2014/comment-programmer-un-jeu-dechecs.php
+http://fr.jeffprod.com/blog/2014/comment-programmer-un-jeu-dechecs.html
