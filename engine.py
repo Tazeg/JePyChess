@@ -342,12 +342,12 @@ class Engine:
         
         print("Depth\tNodes\tCaptures\tE.p.\tCastles\tPromotions\tChecks\tCheckmates")
         
-        time1 = time.time()
+        time1 = self.get_ms()
         for i in range(1,d+1):
             total=self.perftoption(0,i-1,b)
             print("{}\t{}".format(i,total))
-        time2 = time.time()
-        timeDiff = round((time2-time1),2)
+        time2 = self.get_ms()
+        timeDiff = round((time2-time1)/1000,2)
         print('Done in',timeDiff,'s')
 
     def perftoption(self,prof,limit,b):        
@@ -430,10 +430,10 @@ class Engine:
                 print('Could not set board ???!#!')
                 return
             
-            start_time=time.time()       
+            start_time=self.get_ms()       
             self.search(b)
-            stop_time=time.time() 
-            timeDiff.append(round((stop_time-start_time),2))
+            stop_time=self.get_ms()
+            timeDiff.append(stop_time-start_time)
             print('Time:',timeDiff[i],'ms\n')
             
         if(timeDiff[1] < timeDiff[0]):
@@ -456,6 +456,11 @@ class Engine:
         
         b.undomove()
         self.endgame=False
+
+    ####################################################################
+
+    def get_ms(self):
+        return int(round(time.time() * 1000))
 
     ####################################################################
 
