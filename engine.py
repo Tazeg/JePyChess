@@ -150,7 +150,7 @@ class Engine:
                 j+=1
             print()
 
-            # Break is MAT is found
+            # Break if MAT is found
             if(score>self.INFINITY-100 or score<-self.INFINITY+100):
                 break
 
@@ -166,7 +166,7 @@ class Engine:
         # We arrived at the end of the search : return the board score
         if(depth==0):
             return b.evaluer()
-            # TOTO : return quiesce(alpha,beta)
+            # TODO : return quiesce(alpha,beta)
 
         self.nodes+=1
         self.pv_length[b.ply] = b.ply
